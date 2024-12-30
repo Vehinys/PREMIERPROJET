@@ -1,0 +1,76 @@
+<section class="bg-[#454c60]">
+
+    <header class="py-4">
+
+        <div class="container mx-auto px-4">
+
+            <!-- Menu -->
+            <ul id="menu" class="hidden md:flex justify-around space-x-6 mt-4 md:mt-0">
+
+                <!-- Accueil -->
+                <li class="group">
+                    <a href="{{ path('home') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="home-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Accueil </span>
+                    </a>
+                </li>
+
+                <!-- Nos événements -->
+                <li class="group">
+                    <a href="{{ path('app_event') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="dice-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Nos évènements </span>
+                    </a>
+                </li>
+
+                {% if app.user %}
+
+                <!-- Forum -->
+                <li class="group">
+                    <a href="{{ path('app_forum') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="clipboard-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Forum </span>
+                    </a>
+                </li>
+
+                <!-- Mon profil -->
+                <li class="group">
+                    <a href="{{ path('app_profil') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="people-circle-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Mon profil </span>
+                    </a>
+                </li>
+
+                <!-- Déconnexion -->
+                <li class="group">
+                    <a href="{{ path('app_logout') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="power-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Déconnexion </span>
+                    </a>
+                </li>
+
+                {% else %}
+
+                <!-- Connexion -->
+                <li class="group">
+                    <a href="{{ path('app_login') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="log-in-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Connexion </span>
+                    </a>
+                </li>
+
+                <!-- Inscription -->
+                <li class="group">
+                    <a href="{{ path('app_register') }}" class="flex items-center text-gray-300 hover:text-[#6cb5df] font-bold hover:scale-110 p-2 rounded-md">
+                        <ion-icon name="key-outline" class="mr-2 text-xl"> </ion-icon>
+                        <span> Inscription </span>
+                    </a>
+                </li>
+                
+                {% endif %}
+            </ul>
+
+        </div>
+    </header>
+</section>
+

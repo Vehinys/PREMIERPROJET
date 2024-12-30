@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Header{% endblock %}
+
+{% block body %}
+
+<section> 
+    <header>
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="{{ path('home') }}">HOME</a>
+                </li>
+
+                {% if app.user %}
+
+                <li>
+                    <a href="{{ path('logout') }}">DECONNEXION</a>
+                </li>
+
+                {% else %}
+
+                <li>
+                    <a href="{{ path('register') }}">REGISTRATION</a>
+                </li>
+
+                <li>
+                    <a href="{{ path('login') }}">LOGIN</a>
+                </li>
+
+                {% endif %}
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+</section>
+
+{% endblock %}
